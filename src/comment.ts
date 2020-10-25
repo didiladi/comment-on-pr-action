@@ -13,7 +13,7 @@ export async function postComment(input: InputSettings): Promise<string> {
           owner: input.user,
           repo: input.repo,
           issue_number: input.prId,
-          body: JSON.stringify(messageBody)
+          body: messageBody
         }
       )
 
