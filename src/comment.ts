@@ -5,7 +5,8 @@ import {OctokitResponse, IssuesCreateCommentResponseData} from '@octokit/types'
 export async function postComment(input: InputSettings): Promise<string> {
   return new Promise<string>(async (resolve, reject) => {
     const octokit = github.getOctokit(input.token)
-    const messageBody = `${input.commentPrefix}\\n${input.message}`
+    const messageBody = `${input.commentPrefix}
+    ${input.message}`
 
     try {
       const response: OctokitResponse<IssuesCreateCommentResponseData> = await octokit.issues.createComment(
