@@ -4969,7 +4969,7 @@ function postComment(input) {
         return new Promise((resolve, reject) => __awaiter(this, void 0, void 0, function* () {
             const octokit = github.getOctokit(input.token);
             const messageBody = `${input.commentPrefix}
-    ${input.message}`;
+${input.message}`;
             try {
                 const response = yield octokit.issues.createComment({
                     owner: input.user,
